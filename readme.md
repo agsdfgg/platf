@@ -66,7 +66,7 @@ reward表中的奖品名称，表示为 reward
 #### 开发软件环境
 java 1.8.0_171
 
-mysql 8.0
+mysql 5.7 ce
 
 RabbitMQ 3.7.5
 
