@@ -45,7 +45,7 @@ t_user_data_201801 用户水平分表日期型
 reward_name,表示奖品名称。每个表必须有自增主键。
 
 字段名不得包含表名，例如：
-reward表中的奖品名称，表示为 reward
+reward表中的奖品名称，表示为 t_reward.name 不能表示为 t_reward.reward_name
 
 
 #### 数据库字段类型规范
