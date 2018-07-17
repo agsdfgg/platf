@@ -43,7 +43,7 @@ t_user_data_201801 用户水平分表日期型
 主要采用26个字母组成(小写)加上下划线组成，命名简单扼要，语义清晰。单词间用下划线分割。
 
 例如：  
-reward_name,表示奖品名称。每个表必须有自增主键。
+rewardname,表示奖品名称。每个表必须有自增主键。
 
 字段名不得包含表名，例如：       
 reward表中的奖品名称，应该表示为 t_reward.name 不能表示为 t_reward.reward_name
@@ -63,6 +63,9 @@ reward表中的奖品名称，应该表示为 t_reward.name 不能表示为 t_re
 简单字段索引：username，其索引名称为 username_idx  
 复合字段索引：name age，其索引名称为 name_age_idx
 
+
+#### 回避数据库关键词
+关键词列表 见：mysql_keyword.md
 
 
 #### 开发软件环境
