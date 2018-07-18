@@ -71,7 +71,7 @@ reward表中的奖品名称，应该表示为 t_reward.name 不能表示为 t_re
 #### 开发软件环境
 java 1.8.0_171
 
-mysql 8.0
+mysql 5.7
 
 RabbitMQ 3.7.5
 
