@@ -55,12 +55,7 @@ CREATE TABLE `t_game`  (
   `insert_time` datetime(0) NOT NULL ON UPDATE CURRENT_TIMESTAMP(0) COMMENT '插入时间',
   `update_time` datetime(0) NOT NULL ON UPDATE CURRENT_TIMESTAMP(0) COMMENT '更新时间',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 10006 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '游戏表' ROW_FORMAT = Dynamic;
-
--- ----------------------------
--- Records of t_game
--- ----------------------------
-INSERT INTO `t_game` VALUES (10005, '????', '????', '????', '????', 'ios', 45, '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+) ENGINE = InnoDB AUTO_INCREMENT = 10000 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '游戏表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Table structure for t_gift
@@ -121,10 +116,6 @@ CREATE TABLE `t_task`  (
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci COMMENT = '首页任务表' ROW_FORMAT = Dynamic;
 
--- ----------------------------
--- Records of t_task
--- ----------------------------
-INSERT INTO `t_task` VALUES (1, 'task', 'icon', 0, 1);
 
 -- ----------------------------
 -- Table structure for t_thirdparty
