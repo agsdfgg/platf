@@ -113,6 +113,7 @@ CREATE TABLE `t_task`  (
   `avatar` varchar(25) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL DEFAULT '' COMMENT '头像',
   `status` tinyint(1) NOT NULL DEFAULT -1 COMMENT '任务状态',
   `user_id` int(11) NOT NULL DEFAULT -1 COMMENT '所属用户id',
+  `type` tinyint(1) NOT NULL DEFAULT -1 COMMENT '任务类型',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci COMMENT = '首页任务表' ROW_FORMAT = Dynamic;
 
