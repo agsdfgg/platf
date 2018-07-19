@@ -54,6 +54,15 @@ CREATE TABLE `t_game`  (
   `score` int(11) NOT NULL COMMENT '分数的十倍，例如4.5分，记录45',
   `insert_time` datetime(0) NOT NULL ON UPDATE CURRENT_TIMESTAMP(0) COMMENT '插入时间',
   `update_time` datetime(0) NOT NULL ON UPDATE CURRENT_TIMESTAMP(0) COMMENT '更新时间',
+  `type` tinyint(1) NOT NULL DEFAULT -1 COMMENT '游戏类型',
+  `charging_mode` tinyint(1) NOT NULL DEFAULT -1 COMMENT '收费模式',
+  `introduction` varchar(25) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '游戏介绍',
+  `screenshot` varchar(25) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '游戏截图',
+  `developers` varchar(25) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '开发商',
+  `
+operator` varchar(25) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '运营商',
+  `enroll` varchar(25) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '注册',
+  `votes_number` int(11) NOT NULL DEFAULT 0 COMMENT '投票数',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 10000 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '游戏表' ROW_FORMAT = Dynamic;
 
