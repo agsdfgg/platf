@@ -30,7 +30,7 @@ public class TaskController {
     Enums enums;
 
     //我的任务查询
-    @RequestMapping(value = "all",method = RequestMethod.POST)
+    @RequestMapping(value = "all",method = RequestMethod.POST,produces="application/json;charset=UTF-8")
     public ResponseDto getTaskByUserId(@RequestParam(name = "userId") int userId){
         List<Task> list = taskServiceImpl.getTaskByUserId(userId);
         responseDto.setData(list);
@@ -39,7 +39,7 @@ public class TaskController {
     }
 
     //任务奖励领取
-    @RequestMapping(value = "reward",method = RequestMethod.POST)
+    @RequestMapping(value = "reward",method = RequestMethod.POST,produces="application/json;charset=UTF-8")
     public ResponseDto getPrize(@RequestParam(name = "userId") int userId,@RequestParam(name = "taskId") int taskId){
         Boolean bool = taskServiceImpl.reward(userId,taskId);
         if (bool){

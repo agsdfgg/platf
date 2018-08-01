@@ -25,17 +25,16 @@ public class GameController {
     GameServiceImpl gameService;
 
     //查询所有游戏
-    @RequestMapping(value = "/allGames",method = RequestMethod.POST)
+    @RequestMapping(value = "/allGames",method = RequestMethod.POST,produces="application/json;charset=UTF-8")
     public ResponseDto getAllGame(@RequestParam(name = "page") int page,@RequestParam(name = "size") int size){
         return gameService.findAll(page,size);
     }
 
     //查询前6条数据
-    @RequestMapping(value = "/sixGames",method = RequestMethod.POST)
+    @RequestMapping(value = "/sixGames",method = RequestMethod.POST,produces="application/json;charset=UTF-8")
     public ResponseDto getSix(){
         ResponseDto responseDto = new ResponseDto();
         responseDto.setData(gameService.findSix());
         return responseDto;
     }
-
 }

@@ -18,12 +18,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class PrizeController {
     @Autowired
     private PrizeServiceImpl prizeServiceImpl;
-    @RequestMapping(value = "/allPrizes",method = RequestMethod.POST)
+    @RequestMapping(value = "/allPrizes",method = RequestMethod.POST,produces="application/json;charset=UTF-8")
     private ResponseDto findAll(@RequestParam(name = "page") int page, @RequestParam(name = "size") int size){
         return prizeServiceImpl.queryAll(page, size);
     }
 
-    @RequestMapping(value = "/sixPrizes",method = RequestMethod.POST)
+    @RequestMapping(value = "/sixPrizes",method = RequestMethod.POST,produces="application/json;charset=UTF-8")
     private ResponseDto findSix(){
         return prizeServiceImpl.getSix();
     }
