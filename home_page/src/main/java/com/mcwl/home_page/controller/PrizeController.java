@@ -1,12 +1,10 @@
 package com.mcwl.home_page.controller;
 
+import com.alibaba.fastjson.JSONObject;
 import com.mcwl.home_page.dto.ResponseDto;
 import com.mcwl.home_page.service.PrizeServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author Jerry
@@ -19,7 +17,9 @@ public class PrizeController {
     @Autowired
     private PrizeServiceImpl prizeServiceImpl;
     @RequestMapping(value = "/allPrizes",method = RequestMethod.POST,produces="application/json;charset=UTF-8")
-    private ResponseDto findAll(@RequestParam(name = "page") int page, @RequestParam(name = "size") int size){
+    private ResponseDto findAll(@RequestBody JSONObject params ){
+        int page = Integer.parseInt(params.getString("page"));
+        int size = Integer.parseInt(params.getString("size"));
         return prizeServiceImpl.queryAll(page, size);
     }
 

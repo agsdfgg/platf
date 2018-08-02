@@ -1,5 +1,6 @@
 package com.mcwl.home_page.controller;
 
+import com.alibaba.fastjson.JSONObject;
 import com.mcwl.home_page.dto.ResponseDto;
 import com.mcwl.home_page.entity.Enums;
 import com.mcwl.home_page.entity.Task;
@@ -31,7 +32,8 @@ public class TaskController {
 
     //我的任务查询
     @RequestMapping(value = "all",method = RequestMethod.POST,produces="application/json;charset=UTF-8")
-    public ResponseDto getTaskByUserId(@RequestParam(name = "userId") int userId){
+    public ResponseDto getTaskByUserId(@RequestBody JSONObject params){
+        int userId = Integer.parseInt(params.getString("userId"));
         List<Task> list = taskServiceImpl.getTaskByUserId(userId);
         responseDto.setData(list);
         responseDto.setCode(enums.getSuccessCode());
@@ -40,7 +42,9 @@ public class TaskController {
 
     //任务奖励领取
     @RequestMapping(value = "reward",method = RequestMethod.POST,produces="application/json;charset=UTF-8")
-    public ResponseDto getPrize(@RequestParam(name = "userId") int userId,@RequestParam(name = "taskId") int taskId){
+    public ResponseDto getPrize(@RequestBody JSONObject params){
+        int userId = Integer.parseInt(params.getString("userId"));
+        int taskId = Integer.parseInt(params.getString("taskId"));
         Boolean bool = taskServiceImpl.reward(userId,taskId);
         if (bool){
             responseDto.setMessage("领取成功");

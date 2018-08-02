@@ -1,14 +1,10 @@
 package com.mcwl.home_page.controller;
 
+import com.alibaba.fastjson.JSONObject;
 import com.mcwl.home_page.dto.ResponseDto;
 import com.mcwl.home_page.service.GameServiceImpl;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author Jerry
@@ -26,7 +22,9 @@ public class GameController {
 
     //查询所有游戏
     @RequestMapping(value = "/allGames",method = RequestMethod.POST,produces="application/json;charset=UTF-8")
-    public ResponseDto getAllGame(@RequestParam(name = "page") int page,@RequestParam(name = "size") int size){
+    public ResponseDto getAllGame(@RequestBody JSONObject params){
+       int page = Integer.parseInt(params.getString("page"));
+       int size = Integer.parseInt(params.getString("size"));
         return gameService.findAll(page,size);
     }
 
